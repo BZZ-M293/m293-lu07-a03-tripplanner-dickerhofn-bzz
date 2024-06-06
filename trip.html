@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang='de'>
+<html lang="de">
 <head>
-    <meta charset='UTF-8'>
+    <meta charset="UTF-8">
     <title>Hotelzimmer-Buchungssystem</title>
 </head>
 <body>
 <form action="https://it.bzz.ch/demo/formdata/index.php" method="post">
     <fieldset>
         <legend>Reiseinformationen</legend>
-        <label for="Abflughafen">Abflughafen:</label>
-        <select id="Abflughafen" name="Abflughafen" required>
+        <label for="abflughafen">Abflughafen:</label>
+        <select id="abflughafen" name="abflughafen" required>
             <optgroup label="Deutschland">
                 <option value="FRA">Frankfurt</option>
                 <option value="MUC">München</option>
@@ -83,10 +83,10 @@
         <label for="destination">Zielort:</label>
         <input type="text" id="destination" name="destination" list="destinations" required>
         <datalist id="destinations">
-            <option value="Paris">
-            <option value="Rom">
-            <option value="Barcelona">
-            <option value="Amsterdam">
+            <option value="Paris"> Paris </option>
+            <option value="Rom"> Rom </option>
+            <option value="Barcelona"> Barcelona </option>
+            <option value="Amsterdam"> Amsterdam </option>
         </datalist>
     </fieldset>
 
