@@ -1,14 +1,100 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang='de'>
 <head>
-  <meta charset="UTF-8">
-  <title>Reisebuchungs-Formular</title>
-
+    <meta charset='UTF-8'>
+    <title>Hotelzimmer-Buchungssystem</title>
 </head>
 <body>
+<form action="https://it.bzz.ch/demo/formdata/index.php" method="post">
+    <fieldset>
+        <legend>Reiseinformationen</legend>
+        <label for="Abflughafen">Abflughafen:</label>
+        <select id="Abflughafen" name="Abflughafen" required>
+            <optgroup label="Deutschland">
+                <option value="FRA">Frankfurt</option>
+                <option value="MUC">München</option>
+            </optgroup>
+            <optgroup label="Österreich">
+                <option value="VIE">Wien</option>
+                <option value="SZG">Salzburg</option>
+            </optgroup>
+            <optgroup label="Italien">
+                <option value="MXP">Mailand</option>
+                <option value="FCO">Rom</option>
+            </optgroup>
+            <optgroup label="Frankreich">
+                <option value="CDG">Paris</option>
+                <option value="LYS">Lyon</option>
+            </optgroup>
+        </select>
 
-<h1>Reisebuchungs-Formular</h1>
+        <label for="unterkunft">Unterkunft:</label>
+        <input type="radio" id="hotel" name="unterkunft" value="Hotel" required>
+        <label for="hotel">Hotel</label>
+        <input type="radio" id="ferienwohnung" name="unterkunft" value="Ferienwohnung">
+        <label for="ferienwohnung">Ferienwohnung</label>
+        <input type="radio" id="hostel" name="unterkunft" value="Hostel">
+        <label for="hostel">Hostel</label>
 
+        <label for="zusätzliche-dienstleistungen">Zusätzliche Dienstleistungen:</label>
+        <input type="checkbox" id="reiseversicherung" name="zusätzliche-dienstleistungen" value="Reiseversicherung">
+        <label for="reiseversicherung">Reiseversicherung</label>
+        <input type="checkbox" id="flughafen-transfers" name="zusätzliche-dienstleistungen" value="Flughafen-Transfers">
+        <label for="flughafen-transfers">Flughafen-Transfers</label>
+        <input type="checkbox" id="zusätzliches-gepäck" name="zusätzliche-dienstleistungen" value="Zusätzliches Gepäck">
+        <label for="zusätzliches-gepäck">Zusätzliches Gepäck</label>
+    </fieldset>
 
+    <fieldset>
+        <legend>Reisedaten</legend>
+        <label for="start-date">Startdatum:</label>
+        <input type="date" id="start-date" name="start-date" required>
+        <label for="end-date">Enddatum:</label>
+        <input type="date" id="end-date" name="end-date" required>
+        <label for="trip-duration">Reisedauer (Tage):</label>
+        <input type="number" id="trip-duration" name="trip-duration" min="1" max="21" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>Reisende</legend>
+        <label for="num-travelers">Anzahl der Reisenden:</label>
+        <input type="number" id="num-travelers" name="num-travelers" min="1" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>Fluggesellschaft und Dienstleistungen</legend>
+        <label for="airline">Fluggesellschaft:</label>
+        <select id="airline" name="airline" required>
+            <option value="SWISS">SWISS</option>
+            <option value="LUFTHANSA">LUFTHANSA</option>
+            <option value="AUSTRIAN">AUSTRIAN</option>
+        </select>
+
+        <label for="priority-check-in">Priority Check-in:</label>
+        <input type="checkbox" id="priority-check-in" name="additional-services" value="Priority Check-in">
+        <label for="extra-hand-luggage">Zusätzliches Handgepäck:</label>
+        <input type="checkbox" id="extra-hand-luggage" name="additional-services" value="Extra Handgepäck">
+        <label for="rental-car">Mietwagen:</label>
+        <input type="checkbox" id="rental-car" name="additional-services" value="Rental Car">
+    </fieldset>
+
+    <fieldset>
+        <legend>Zielort</legend>
+        <label for="destination">Zielort:</label>
+        <input type="text" id="destination" name="destination" list="destinations" required>
+        <datalist id="destinations">
+            <option value="Paris">
+            <option value="Rom">
+            <option value="Barcelona">
+            <option value="Amsterdam">
+        </datalist>
+    </fieldset>
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <input type="reset" value="Zurücksetzen">
+    <input type="submit" value="Absenden">
+</form>
 </body>
 </html>
